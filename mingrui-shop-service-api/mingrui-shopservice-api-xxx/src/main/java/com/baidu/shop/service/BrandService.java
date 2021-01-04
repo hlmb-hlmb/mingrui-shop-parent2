@@ -13,7 +13,7 @@ import springfox.documentation.spring.web.json.Json;
 /**
  * @ClassName BrandService
  * @Description: TODO
- * @Author hexiangshen
+ * @Author helianmingbo
  * @Date 2020/12/25
  * @Version V1.0
  **/

@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 /**
  * @ClassName RunZuulServerApplication
  * @Description: TODO
- * @Author hexiangshen
+ * @Author helianmingbo
  * @Date 2020/12/23
  * @Version V1.0
  **/

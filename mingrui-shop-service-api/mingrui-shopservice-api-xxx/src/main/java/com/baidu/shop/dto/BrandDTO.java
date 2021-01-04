@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @ClassName BrandDTO
  * @Description: TODO
- * @Author hexiangshen
+ * @Author helianmingbo
  * @Date 2020/12/25
  * @Version V1.0
  **/

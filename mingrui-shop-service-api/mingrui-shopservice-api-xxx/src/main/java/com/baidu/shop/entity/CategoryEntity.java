@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * @ClassName CategoryEntity
  * @Description: TODO
- * @Author hexiangshen
+ * @Author helianmingbo
  * @Date 2020/12/22
  * @Version V1.0
  **/

@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @ClassName SpecGroupDTO
  * @Description: TODO
- * @Author hexiangshen
+ * @Author helianmingbo
  * @Date 2021/1/4
  * @Version V1.0
  **/
