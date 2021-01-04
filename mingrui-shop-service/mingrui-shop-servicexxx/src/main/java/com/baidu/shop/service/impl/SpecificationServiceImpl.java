@@ -95,11 +95,11 @@ public class SpecificationServiceImpl extends BaseApiService implements Specific
     @Override
     public Result<JsonObject> deleteSpecGroup(Integer id) {
 
-        //判断规格足之前是否有规格参数
+        //判断规格组之前是否有规格参数
         Example example = new Example(SpecParamEntity.class);
         example.createCriteria().andEqualTo("groupId",id);
         List<SpecParamEntity> specParamEntities = specParamMapper.selectByExample(example);
-        //删除规格组之前需要先判断一下当前规格组下是否有规格参数
+
         if(specParamEntities.size() > 0){
             return this.setResultError("不能删除此参数");
         }
