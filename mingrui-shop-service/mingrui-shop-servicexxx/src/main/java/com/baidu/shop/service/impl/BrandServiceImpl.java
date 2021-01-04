@@ -118,13 +118,13 @@ public class BrandServiceImpl extends BaseApiService implements BrandService {
         return this.setResultSuccess(pageInfo);
     }
 
-    //提取重复代码:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    //提取删除重复代码
     private void deleteCategoryBrandId(Integer brandId){
         Example example = new Example(CategoryBrandEntity.class);
         example.createCriteria().andEqualTo("brandId",brandId);
         categoryBrandMapper.deleteByExample(example);
     }
-
+    //提取新增重复代码
     private void insertCategoryBrandList(String categories, Integer brandId){
 
         if (StringUtils.isEmpty(categories)) throw new RuntimeException("分类信息不能为空");

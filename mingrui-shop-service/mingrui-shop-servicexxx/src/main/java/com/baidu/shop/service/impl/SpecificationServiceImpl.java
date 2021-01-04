@@ -68,7 +68,7 @@ public class SpecificationServiceImpl extends BaseApiService implements Specific
         return this.setResultSuccess();
     }
 
-    //--------------------------------
+
     @Override
     public Result<List<SpecGroupEntity>> getSpecGroupInfo(SpecGroupDTO specGroupDTO) {
         Example example = new Example(SpecGroupEntity.class);
@@ -98,12 +98,12 @@ public class SpecificationServiceImpl extends BaseApiService implements Specific
         //判断规格组之前是否有规格参数
         Example example = new Example(SpecParamEntity.class);
         example.createCriteria().andEqualTo("groupId",id);
+
         List<SpecParamEntity> specParamEntities = specParamMapper.selectByExample(example);
 
         if(specParamEntities.size() > 0){
             return this.setResultError("不能删除此参数");
         }
-
         specGroupMapper.deleteByPrimaryKey(id);
         return this.setResultSuccess();
     }
