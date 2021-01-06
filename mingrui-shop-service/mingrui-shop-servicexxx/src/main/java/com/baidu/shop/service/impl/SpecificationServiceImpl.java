@@ -36,7 +36,7 @@ public class SpecificationServiceImpl extends BaseApiService implements Specific
     private SpecParamMapper specParamMapper;
 
 
-    @Override//查询规格参数
+    @Override
     public Result<List<SpecParamEntity>> getSpecParamInfo(SpecParamDTO specParamDTO) {
         SpecParamEntity specParamEntity = BaiduBeanUtil.copyProperties(specParamDTO,SpecParamEntity.class);
         Example example = new Example(SpecParamEntity.class);

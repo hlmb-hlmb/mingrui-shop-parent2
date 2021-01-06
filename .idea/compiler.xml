@@ -19,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mingrui-shop-basic" target="1.8" />
       <module name="mingrui-shop-basic-uploadserver" target="1.8" />
     </bytecodeTargetLevel>
   </component>

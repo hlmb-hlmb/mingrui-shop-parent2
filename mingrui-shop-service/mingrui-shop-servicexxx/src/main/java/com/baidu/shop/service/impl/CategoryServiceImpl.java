@@ -84,6 +84,7 @@ public class CategoryServiceImpl extends BaseApiService implements CategoryServi
         //根据查询的数据的 判断isid是否为1 1为父节点不能删除
         if (categoryEntity.getIsParent() == 1) return this.setResultError("当前节点为父节点");
 
+        //判断是否存在中间表 是否能删除!!!!
         CategoryBrandEntity categoryBrandEntity = new CategoryBrandEntity();
         categoryBrandEntity.setCategoryId(id);
         List<CategoryBrandEntity> cate =  categoryBrandMapper.select(categoryBrandEntity);
