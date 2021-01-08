@@ -6,11 +6,13 @@ import com.baidu.shop.dto.SpecGroupDTO;
 import com.baidu.shop.dto.SpecParamDTO;
 import com.baidu.shop.entity.SpecGroupEntity;
 import com.baidu.shop.entity.SpecParamEntity;
+import com.baidu.shop.validate.group.MingruiOperation;
 import com.google.gson.JsonObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import javafx.scene.chart.ValueAxis;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.spring.web.json.Json;
 
@@ -31,11 +33,11 @@ public interface SpecificationService {
 
     @ApiOperation(value = "新增")
     @PostMapping(value = "/specgroup/save")
-    Result<JsonObject> saveSpecGroup(@RequestBody SpecGroupDTO specGroupDTO);
+    Result<JsonObject> saveSpecGroup(@Validated({MingruiOperation.Add.class}) @RequestBody SpecGroupDTO specGroupDTO);
 
     @ApiOperation(value = "修改")
     @PutMapping(value = "/specgroup/save")
-    Result<JsonObject> updateSpecGroup(@RequestBody SpecGroupDTO specGroupDTO);
+    Result<JsonObject> updateSpecGroup(@Validated({MingruiOperation.Update.class}) @RequestBody SpecGroupDTO specGroupDTO);
 
     @ApiOperation(value = "删除")
     @DeleteMapping(value = "/specgroup/delete/{id}")

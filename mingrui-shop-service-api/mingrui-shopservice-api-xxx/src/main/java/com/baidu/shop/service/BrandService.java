@@ -3,10 +3,12 @@ package com.baidu.shop.service;
 import com.baidu.shop.base.Result;
 import com.baidu.shop.dto.BrandDTO;
 import com.baidu.shop.entity.BrandEntity;
+import com.baidu.shop.validate.group.MingruiOperation;
 import com.github.pagehelper.PageInfo;
 import com.google.gson.JsonObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.spring.web.json.Json;
 
@@ -29,11 +31,11 @@ public interface BrandService {
 
     @ApiOperation(value = "新增品牌")
     @PostMapping(value = "brand/save")
-    Result<JsonObject> saveBrandInfo(@RequestBody BrandDTO brandDTO);
+    Result<JsonObject> saveBrandInfo(@Validated({MingruiOperation.Add.class}) @RequestBody BrandDTO brandDTO);
 
     @ApiOperation(value = "修改品牌")
     @PutMapping(value = "brand/save")
-    Result<JsonObject> editBrandInfo(@RequestBody BrandDTO brandDTO);
+    Result<JsonObject> editBrandInfo(@Validated({MingruiOperation.Update.class}) @RequestBody BrandDTO brandDTO);
 
     @ApiOperation(value = "删除品牌")
     @DeleteMapping(value = "brand/delete")
